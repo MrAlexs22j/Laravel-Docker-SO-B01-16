@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//RUTAS DE LANDING PAGE
+Route::get('/', [WelcomeController::class, 'index']);
+
+Auth::routes();
+
+//RUTAS HOME
+Route::get('/home', [HomeController::class, 'index'])->name('home');
